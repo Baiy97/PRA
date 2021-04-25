@@ -211,11 +211,9 @@ class Trainer(object):
                 self.status['step_id'] = step_id
                 self._compose_callback.on_step_begin(self.status)
 
-                print('AAAAA')
                 # model forward
                 outputs = model(data)
                 loss = outputs['loss']
-                print(loss)
                 # model backward
                 loss.backward()
                 self.optimizer.step()

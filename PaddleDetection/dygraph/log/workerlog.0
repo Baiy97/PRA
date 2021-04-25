@@ -1,0 +1,23 @@
+/usr/local/bin/conda/envs/blackhole/lib/python3.7/site-packages/paddle/tensor/creation.py:143: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  if data.dtype == np.object:
+W0425 00:45:02.688666 36228 gen_comm_id_helper.cc:120] connect addr=127.0.0.1:37201 failed 1 times with reason: Connection refused retry after 0.5 seconds
+W0425 00:45:03.188920 36228 gen_comm_id_helper.cc:120] connect addr=127.0.0.1:37201 failed 2 times with reason: Connection refused retry after 1 seconds
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::imperative::NCCLParallelContext::Init()
+1   paddle::imperative::NCCLParallelContext::BcastNCCLId(std::vector<ncclUniqueId, std::allocator<ncclUniqueId> >&, int)
+2   void paddle::platform::SendBroadCastCommID<ncclUniqueId>(std::vector<std::string, std::allocator<std::string> >, std::vector<ncclUniqueId, std::allocator<ncclUniqueId> >*)
+3   paddle::framework::SignalHandle(char const*, int)
+4   paddle::platform::GetCurrentTraceBackString()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Termination signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1619282703 (unix time) try "date -d @1619282703" if you are using GNU date ***]
+  [SignalInfo: *** SIGTERM (@0x3e800008d6c) received by PID 36228 (TID 0x7f96b8255740) from PID 36204 ***]
+

@@ -1,0 +1,21 @@
+epoch: 320
+
+LearningRate:
+  base_lr: 0.00025      # 0.001 8 卡
+  schedulers:
+  - !PiecewiseDecay
+    gamma: 0.1
+    milestones:
+    - 240
+    - 280
+  - !LinearWarmup
+    start_factor: 0.
+    steps: 4000
+
+OptimizerBuilder:
+  optimizer:
+    momentum: 0.9
+    type: Momentum
+  regularizer:
+    factor: 0.0005
+    type: L2

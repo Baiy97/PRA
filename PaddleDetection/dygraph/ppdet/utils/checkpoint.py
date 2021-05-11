@@ -196,6 +196,7 @@ def save_model(model, optimizer, save_dir, save_name, last_epoch):
         return
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
+    save_dir = 'output/yolov3_darknet53_270e_coco/'
     save_path = os.path.join(save_dir, save_name)
     if isinstance(model, nn.Layer):
         paddle.save(model.state_dict(), save_path + ".pdparams")

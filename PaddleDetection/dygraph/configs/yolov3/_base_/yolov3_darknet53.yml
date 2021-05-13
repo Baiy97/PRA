@@ -24,7 +24,7 @@ YOLOv3Head:
   loss: YOLOv3Loss
 
 YOLOv3Loss:
-  ignore_thresh: 0.6          # 0.7   只对 iou 达到 0.7 的做定位损失，感觉可以稍微降一下
+  ignore_thresh: 0.7          
   downsample: [32, 16, 8]
   label_smooth: false         #  label smooth 用来避免 over high confidence，暂时不用
 
@@ -37,7 +37,7 @@ BBoxPostProcess:
   nms:
     name: MultiClassNMS
     keep_top_k: 100
-    score_threshold: 0.01    # 0.01
+    score_threshold: 0.01
     nms_threshold: 0.45
     nms_top_k: 1000
     normalized: false

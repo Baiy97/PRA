@@ -10,7 +10,8 @@ TrainReader:
     # - Mosaic: {}
     - RandomDistort: {}
     - RandomExpand: {fill_value: [123.675, 116.28, 103.53]}
-    - RandomCrop: {thresholds: [0.0003, 0.0005, 0.001, 0.002, 1.0, 1.0], scaling: [0.5, 1.0]}
+    # - RandomCrop: {thresholds: [0.0003, 0.0005, 0.001, 0.002, 1.0, 1.0], scaling: [0.5, 1.0]}
+    - RandomCrop: {}
     - RandomFlip: {}
   batch_transforms:
     - BatchRandomResize: {target_size: [320, 352, 384, 416, 448, 480, 512, 544, 576, 608], random_size: True, random_interp: True, keep_ratio: False}
@@ -19,14 +20,14 @@ TrainReader:
     - BboxXYXY2XYWH: {}
     - NormalizeImage: {mean: [0.485, 0.456, 0.406], std: [0.229, 0.224, 0.225], is_scale: True}
     - Permute: {}
-    - Gt2YoloTarget: {anchor_masks: [[6, 7, 8], [3, 4, 5], [0, 1, 2]], anchors: [[6, 6], [10, 13], [16, 30], [33, 23], [30, 61], [62, 45], [59, 119], [116, 90], [156, 198], [373, 326]], downsample_ratios: [32, 16, 8]}
+    - Gt2YoloTarget: {anchor_masks: [[6, 7, 8], [3, 4, 5], [0, 1, 2]], anchors: [[10, 13], [16, 30], [33, 23], [30, 61], [62, 45], [59, 119], [116, 90], [156, 198], [373, 326]], downsample_ratios: [32, 16, 8]}
   batch_size: 8
   shuffle: true
   drop_last: true
-  mixup_epoch: 200
-  oversample_epoch: 200
-  pyramid_epoch: 200
-  mosaic_epoch: 200
+  mixup_epoch: 125
+#   oversample_epoch: 200
+#   pyramid_epoch: 200
+#   mosaic_epoch: 200
   # oversample_prob: 0.5
   # pyramid_prob: 0.5
   mixup_prob: 1.0

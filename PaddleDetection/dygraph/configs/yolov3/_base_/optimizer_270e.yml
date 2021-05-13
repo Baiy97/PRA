@@ -1,4 +1,4 @@
-epoch: 250
+epoch: 150
 
 LearningRate:
   base_lr: 0.00025      # 0.001 8 卡
@@ -6,8 +6,8 @@ LearningRate:
   - !PiecewiseDecay
     gamma: 0.1
     milestones:
-    - 220
-    - 240
+    - 115
+    - 135
   - !LinearWarmup
     start_factor: 0.
     steps: 4000

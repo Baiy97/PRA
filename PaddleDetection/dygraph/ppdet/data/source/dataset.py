@@ -69,9 +69,9 @@ class DetDataset(Dataset):
             n = len(self.roidbs)
             roidb['Aug'].append(4)
             if random.random() < 0.33:
-                roidb = [roidb, ] + [copy.deepcopy(self.roidbs[np.random.randint(n)]) for _ in range(3)]
+                roidb = [roidb] + [copy.deepcopy(self.roidbs[np.random.randint(n)]) for _ in range(3)]
             else:
-                roidb = [roidb, ] + [copy.deepcopy(self.roidbs[np.random.randint(n)]) for _ in range(1)]
+                roidb = [roidb] + [copy.deepcopy(self.roidbs[np.random.randint(n)]) for _ in range(1)]
 
         return self.transform(roidb)
 

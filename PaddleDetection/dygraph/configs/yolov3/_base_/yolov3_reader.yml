@@ -7,7 +7,7 @@ TrainReader:
     - OverSample: {}
     - PyramidImage: {}
     - Mixup: {alpha: 1.5, beta: 1.5}
-    # - Mosaic: {}
+    - Mosaic: {}
     - RandomDistort: {}
     - RandomExpand: {fill_value: [123.675, 116.28, 103.53]}
     # - RandomCrop: {thresholds: [0.0003, 0.0005, 0.001, 0.002, 1.0, 1.0], scaling: [0.5, 1.0]}
@@ -27,11 +27,11 @@ TrainReader:
   mixup_epoch: 250
   oversample_epoch: 250
   pyramid_epoch: 250
-#   mosaic_epoch: 200
+  mosaic_epoch: 250
   oversample_prob: 0.7
   pyramid_prob: 0.3
-  mixup_prob: 0.5
-  # mosaic_prob: 0.7
+  mixup_prob: 0.3
+  mosaic_prob: 0.6
 
 
 EvalReader:
